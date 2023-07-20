@@ -5,10 +5,20 @@
 
 <mapper namespace="com.jdu.recreation.model.dao.MusicDAO">
 
-    <select id="selectMusic" resultType="com.jdu.recreation.model.vo.MusicVo">
+    <select id="selectMusic"
+            parameterType="com.jdu.recreation.model.vo.MusicVo"
+            resultType="com.jdu.recreation.model.vo.MusicVo">
         select
             *
         from MUSIC
+        <where>
+            <if test="release_year != null and release_year != ''">
+                and release_year = #{release_year}
+            </if>
+            <if test="genre_code != null and genre_code != ''">
+                and genre_code = #{genre_code}
+            </if>
+        </where>
     </select>
 
 </mapper>

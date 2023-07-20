@@ -1,12 +1,10 @@
 package com.jdu.recreation.controller;
 
+import com.jdu.recreation.model.vo.MusicVo;
 import com.jdu.recreation.service.interfaces.MusicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,8 +13,8 @@ public class MusicController {
 
     private final MusicService musicService;
 
-    @GetMapping("/list")
-    public ResponseEntity<Object> list() {
-        return ResponseEntity.ok().body(musicService.getMusicList());
+    @GetMapping("/get")
+    public ResponseEntity<Object> get(@RequestBody MusicVo vo) {
+        return ResponseEntity.ok().body(musicService.getMusicList(vo));
     }
 }

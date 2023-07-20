@@ -7,5 +7,5 @@ import java.util.List;
 
 @Mapper
 public interface MusicDAO {
-    List<MusicVo> selectMusic();
+    List<MusicVo> selectMusic(MusicVo vo);
 }

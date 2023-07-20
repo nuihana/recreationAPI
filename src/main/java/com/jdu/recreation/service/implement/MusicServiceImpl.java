@@ -15,7 +15,7 @@ public class MusicServiceImpl implements MusicService {
     private final MusicDAO musicDAO;
 
     @Override
-    public List<MusicVo> getMusicList() {
-        return musicDAO.selectMusic();
+    public List<MusicVo> getMusicList(MusicVo vo) {
+        return musicDAO.selectMusic(vo);
     }
 }
