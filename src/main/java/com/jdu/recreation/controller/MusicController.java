@@ -13,8 +13,8 @@ public class MusicController {
 
     private final MusicService musicService;
 
-    @GetMapping("/get")
+    @PostMapping("/get")
     public ResponseEntity<Object> get(@RequestBody MusicVo vo) {
-        return ResponseEntity.ok().body(musicService.getMusicList(vo));
+        return ResponseEntity.ok().body(musicService.getRandomMusic(vo));
     }
 }
