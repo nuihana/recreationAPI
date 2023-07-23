@@ -12,6 +12,12 @@
             *
         from MUSIC
         <where>
+            <if test="usedList != null and usedList.size() > 0">
+                and seq not in
+                <foreach collection="usedList" item="item" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
             <if test="release_year != null and release_year != ''">
                 and release_year = #{release_year}
             </if>
