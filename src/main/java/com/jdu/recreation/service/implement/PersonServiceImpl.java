@@ -21,7 +21,7 @@ public class PersonServiceImpl implements PersonService {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
 
-        if (personList.size() == 0) return null;
-        else return personList.get(random.nextInt(personList.size()));
+        if (personList.isEmpty()) return null;
+        return personList.get(random.nextInt(personList.size()));
     }
 }

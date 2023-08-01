@@ -21,7 +21,7 @@ public class MusicServiceImpl implements MusicService {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
 
-        if (musicList.size() == 0) return null;
+        if (musicList.isEmpty()) return null;
         return musicList.get(random.nextInt(musicList.size()));
     }
 }
