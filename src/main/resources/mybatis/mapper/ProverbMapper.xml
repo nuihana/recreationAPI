@@ -18,6 +18,9 @@
                     #{item}
                 </foreach>
             </if>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
         </where>
     </select>
 
